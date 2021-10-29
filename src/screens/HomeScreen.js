@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import tw from 'tailwind-react-native-classnames';
 import ImageCard,{SLIDER_WIDTH, ITEM_WIDTH } from '../components/ImageCard';
 import Carousel from 'react-native-snap-carousel';  
-
+import LottieView from 'lottie-react-native';
 const data = [
     {
       id: "123",
@@ -68,7 +68,7 @@ const HomeScreen = () => {
              </View>
 
 
-             <View style={[tw` bg-yellow-400 py-4 mt-12`,{flexDirection:"row", justifyContent:"space-between"}]}>
+             <View style={[tw` bg-yellow-400 py-8 mt-8`,{flexDirection:"row", justifyContent:"space-between"}]}>
                  <View style={tw`left-2`}> 
                     <Text style={tw`text-xl text-gray-600`}>
                         Gotten your 
@@ -76,9 +76,9 @@ const HomeScreen = () => {
                     <Text style={tw`text-xl text-gray-600`}>E-Bike yet?</Text>
                  </View>
 
-                 <View style={[tw`bg-black rounded-3xl px-14 py-2 mr-4  `, {flexDirection:"row", }]}>
+                 <View style={[tw`bg-black rounded-3xl px-12 py-2 mr-4  `, {flexDirection:"row", }]}>
                      <View style={tw``}>
-                    <Text style={tw`text-white text-xl right-10`}>Your Orders</Text>
+                    <Text style={tw`text-white font-semibold text-xl right-8`}>Your Orders</Text>
                     </View>
 
                     <View >
@@ -88,6 +88,27 @@ const HomeScreen = () => {
              </View>
 
 
+                <View style={{flexDirection:"row", alignItems:"center"}}>
+                    <View style={tw``}>
+                        <LottieView 
+                        autoPlay
+                         loop
+                         speed={0.5}
+                         
+                         source={require('../../assets/animation/9817-delivery-on-bicycle-or-cycling.json')}
+                         style={{height: 170, width: 50,  marginBottom: 30}} 
+                        />
+                    </View>
+
+                    <View >
+                        <Text style={ tw`text-xl text-gray-600 `}>
+                            You too can join our 
+                        </Text>
+                        <Text style={tw`text-xl text-gray-600`}>
+                        Elite squad of E-Bikers
+                        </Text>
+                    </View>
+                </View>
         </View>
     )
 }
