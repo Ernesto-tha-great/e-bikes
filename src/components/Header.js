@@ -13,7 +13,7 @@ const Header = () => {
 
                  
             </View>
-        <View>
+        <View style={tw`bg-gray-100 rounded-2xl mt-2`}>
         <Ionicons style={tw` p-4`} name="notifications-outline" size={30} />
         </View>
 </View>
