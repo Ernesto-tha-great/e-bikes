@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, SafeAreaView, Text} from 'react-native'
+import { View, SafeAreaView, Text, TouchableOpacity} from 'react-native'
 import {  AntDesign} from '@expo/vector-icons';
 import Header from '../components/Header';
 import tw from 'tailwind-react-native-classnames';
@@ -46,15 +46,15 @@ const data = [
   ];
 
  
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
         const isCarousel = React.useRef(null)
       
     
     return (
         <View style={[tw`bg-white`,{flex: 1, }]}>
             <Header />
-            <Text style={tw`bg-white text-xl font-semibold p-4 `}>Hello Good Morning!</Text>
-            <View style={{marginLeft:-30, marginVertical: 8, marginBottom: 11,  }}>
+            <Text style={tw`bg-white text-xl font-semibold p-2 `}>Hello Good Morning!</Text>
+            <View style={{marginLeft:-30, marginVertical: 4, marginBottom: 11,  }}>
                 <Carousel
                     layout="default"
                     ref={isCarousel}
@@ -69,6 +69,7 @@ const HomeScreen = () => {
 
 
              <View style={[tw` bg-yellow-400 py-8 mt-8`,{flexDirection:"row", justifyContent:"space-between"}]}>
+               
                  <View style={tw`left-2`}> 
                     <Text style={tw`text-xl text-gray-600`}>
                         Gotten your 
@@ -77,13 +78,16 @@ const HomeScreen = () => {
                  </View>
 
                  <View style={[tw`bg-black rounded-3xl px-12 py-2 mr-4  `, {flexDirection:"row", }]}>
-                     <View style={tw``}>
-                    <Text style={tw`text-white font-semibold text-xl right-8`}>Your Orders</Text>
-                    </View>
+                     <TouchableOpacity onPress={() => navigation.navigate("Explore")} style={{flexDirection:"row", paddingVertical: 4}}>
+                    
+                    <Text style={tw`text-white font-semibold text-xl right-6`}>Your Orders</Text>
+                    
+                
 
                     <View >
                     <AntDesign style={tw`left-8`} name="arrowright" size={33} color="white"  />
                     </View>
+                    </TouchableOpacity>
                  </View>
              </View>
 
