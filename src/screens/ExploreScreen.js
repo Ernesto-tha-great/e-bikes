@@ -54,7 +54,18 @@ const ExploreScreen = ({navigation}) => {
                     </View>
 
                     <TextInput placeholder="Enter the recipt number" style={[tw`border rounded-3xl pl-4`,{ height: 60, width: 250}]}  />
-                    <TouchableOpacity activeOpacity={0.7} style={ { flexDirection:"row", alignItems:"center", margin: 10, justifyContent:"space-between", backgroundColor:"black", paddingVertical:11, paddingHorizontal: 66, borderRadius: 30}}>
+                    <TouchableOpacity 
+                    onPress={()=>navigation.navigate('OrderHistory')}
+                     activeOpacity={0.7} 
+                     style={ { flexDirection:"row", 
+                     alignItems:"center", margin: 10, 
+                     justifyContent:"space-between",
+                      backgroundColor:"black", 
+                      paddingVertical:11,
+                       paddingHorizontal: 66, 
+                       borderRadius: 30
+                        }}>
+                     
                         
                         <Text style={tw`text-white text-xl font-semibold`}>Track Now</Text>
         
