@@ -4,7 +4,7 @@ import { Ionicons} from '@expo/vector-icons';
 import tw from 'tailwind-react-native-classnames';
 const Header = () => {
     return (
-      <View style={{flexDirection:"row", justifyContent:"space-between", paddingVertical:10, paddingHorizontal: 10, marginTop: 20, alignItems:"center", backgroundColor:"white"}}>
+      <View style={{flexDirection:"row", justifyContent:"space-between", paddingVertical:10, paddingHorizontal: 10, marginTop: 40, alignItems:"center", backgroundColor:"white"}}>
             <View style={{ }}>
                 <Image
                  style={tw`w-16 h-16 rounded-full mt-2`} 
