@@ -105,10 +105,10 @@ const HomeScreen = ({navigation}) => {
                     </View>
 
                     <View >
-                        <Text style={ tw`text-xl text-gray-600 `}>
+                        <Text style={ tw`text-xl text-gray-500 `}>
                             You too can join our 
                         </Text>
-                        <Text style={tw`text-xl text-gray-600`}>
+                        <Text style={tw`text-xl text-gray-500`}>
                         Elite squad of E-Bikers
                         </Text>
                     </View>
