@@ -1,47 +1,13 @@
 import React from 'react'
-import { View, Text,StyleSheet, Button, SafeAreaView, TouchableOpacity, ScrollView} from 'react-native'
-import {Avatar, Title, Caption, Paragraph, Drawer,  TouchableRipple, Switch} from 'react-native-paper';
+import { View, Text,StyleSheet, TouchableOpacity, ScrollView} from 'react-native'
 import {MaterialCommunityIcons, AntDesign} from '@expo/vector-icons';
 import BottomSheet from 'reanimated-bottom-sheet'
 import Animated from 'react-native-reanimated';
 import tw from 'tailwind-react-native-classnames';
 import HistoryCard from '../components/HistoryCard';
-import { Divider } from 'react-native-elements';
 import Map from '../components/Map'
+import DummyData from "../constants/DummyData"
 
-const data = [
-    {
-        image: "https://cdn.pixabay.com/photo/2016/03/31/18/01/bow-1294066__480.png",
-        trackingNumber: "SCP9374826473",
-        status: "In the process",
-
-    },
-    {
-        image: "https://cdn.pixabay.com/photo/2018/04/18/20/07/delivery-truck-3331471_1280.png",
-        trackingNumber: "SCP9374826480",
-        status: "In delivery",
-
-    },
-    {
-        image: "https://cdn.pixabay.com/photo/2019/04/04/11/30/delivery-4102583_1280.jpg",
-        trackingNumber: "SCP93748264444",
-        status: "Delivered",
-
-    },
-    {
-        image: "https://cdn.pixabay.com/photo/2015/12/11/14/17/christmas-shopping-1088186__480.jpg",
-        trackingNumber: "SCP9374826987",
-        status: "In cart",
-
-    },
-    {
-        image: "https://cdn.pixabay.com/photo/2018/07/10/22/26/ecommerce-3529837__340.jpg",
-        trackingNumber: "SCP9374826434",
-        status: "Awaiting Payment",
-
-    },
-
-]
 
 
 const OrderHistoryScreen = ({navigation}) => {
@@ -53,7 +19,7 @@ const OrderHistoryScreen = ({navigation}) => {
             {/* header */}
             <View style={{flexDirection:"row", justifyContent:"space-between"}}>
                     <View>
-                        <Text style={tw`  text-gray-500`}>Estimate arrives in</Text>
+                        <Text style={tw`text-gray-500`}>Estimate arrives in</Text>
                         <Text style={tw`text-2xl font-semibold`}>2h 40m</Text>
                     </View>
                    
@@ -63,34 +29,35 @@ const OrderHistoryScreen = ({navigation}) => {
             </View>
 
              {/* card */}
-             <View style={tw`bg-yellow-300 py-4 mx-2 rounded-3xl    mt-2`}>
-                <View style={tw` mx-2 border-gray-400 p-4`}>
+             <View style={tw`bg-yellow-300 py-4 mx-2 rounded-3xl   mt-2`}>
+                <View style={tw` mx-2 border-gray-400 border-b p-4`}>
                     <Text style={tw`text-xl font-semibold`}>Sukabunmi, Indonesia</Text>
                     <Text style={tw`text-xs text-gray-500 `}>No receipt: SCP3567487394</Text>
                 </View>
-                <Divider width={0.7} color="grey" inset={true} insetType="middle" orientation="horizontal"  />
+               
 
-                <View style={tw` mx-2 border-gray-400 p-4`}>
+                <View style={tw` mx-2 border-gray-400  border-b p-4`}>
                     <Text style={tw`text-xl font-semibold`}>2500 USD</Text>
                     <Text style={tw`text-xs  text-gray-500 `}>Postal Fee</Text>
                 </View>
                 
-                <Divider width={0.7} color="grey" inset={true} insetType="middle" orientation="horizontal"  />
+                
                 
                 <View style={tw` mx-2 border-gray-400 p-4`}>
                     <Text style={tw`text-xl font-semibold`}>Bali, Indonesia</Text>
                     <Text style={tw`text-xs  text-gray-500 `}>Parcel, 24kg</Text>
                 </View>
             </View>
+
             {/* scrollview */}
-            <View style={tw`py-4`}>
-            <Text style={tw`p-4 text-xl font-semibold`}>History</Text>
-            <ScrollView style={tw`pb-4`}>
-                {data.map(({image, trackingNumber, status}, index) => (
+            <Text style={tw`p-4 text-xl font-semibold shadow`}>History</Text>
+            
+            <ScrollView style={tw` py-4 `}>
+                {DummyData.data2.map(({image, trackingNumber, status}, index) => (
                     <HistoryCard key={index} image={image} trackingNumber={trackingNumber} status={status}  />
                 ))}
             </ScrollView>
-            </View>
+  
 
             
         </View>
@@ -138,58 +105,6 @@ const OrderHistoryScreen = ({navigation}) => {
 export default OrderHistoryScreen
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-      
-       
-       
-    },
-    userInfoSection: {
-        paddingHorizontal: 30,
-        marginBottom: 25,
-    },
-    title:{
-        fontSize: 24,
-        fontWeight: 'bold',
-    },
-    caption: {
-        fontSize: 14,
-        lineHeight: 14,
-        fontWeight:"500"
-    },
-    row:{
-        flexDirection: 'row',
-        marginBottom: 10,
-    },
-    infoBoxWrapper: {
-        borderBottomColor: '#dddddd',
-        borderBottomWidth: 1,
-        borderTopColor: '#dddddd',
-        borderTopWidth: 1,
-        flexDirection: 'row',
-        height: 100
-    },
-    infoBox: {
-        width: '50%',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    menuWrapper: {
-        marginTop: 10,
-    },
-    menuItem: {
-        flexDirection: 'row',
-        paddingVertical: 15,
-        paddingHorizontal: 30,
-    },
-    menuItemText: {
-        color: '#555555',
-        marginLeft: 20,
-        fontSize: 16,
-        fontWeight: '600',
-        lineHeight: 26,
-
-    },
     header:{
         backgroundColor:"white",
         shadowColor:"#333333",
@@ -201,13 +116,6 @@ const styles = StyleSheet.create({
         borderTopRightRadius:30,
 
     },
-    commandButton: {
-        padding: 15,
-        borderRadius: 10,
-        backgroundColor: '#FF6347',
-        alignItems: 'center',
-        marginTop: 10,
-    },
     panelHeader: {
         alignItems: 'center',
     },
@@ -217,51 +125,6 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         backgroundColor: '#DBE2E9',
         marginBottom: 10,
-    },
-    panelTitle: {
-        fontSize: 27,
-        height: 35,
-    },
-    panelSubtitle: {
-        fontSize: 14,
-        color: 'gray',
-        height: 30,
-        marginBottom: 10,
-    },
-
-    panelButton: {
-        padding: 13,
-        borderRadius: 10,
-        backgroundColor: '#FF6347',
-        alignItems: 'center',
-        marginVertical: 7,
-
-    },
-    panelButtonTitle: {
-        fontSize: 17,
-        fontWeight: 'bold',
-        color: 'white',
-    },
-    action:{
-        flexDirection:"row",
-        marginTop:10,
-        marginBottom:10,
-        borderBottomWidth:1,
-        borderBottomColor:"#f2f2f2",
-        paddingBottom:5,
-    },
-    actionError:{
-        flexDirection:"row",
-        marginTop:10,
-        borderBottomWidth:1,
-        borderBottomColor:"#FF0000",
-        paddingBottom:5,
-    },
-    textInput:{
-        flex:1,
-        marginTop: Platform.OS === 'ios' ? 0 : -12,
-        paddingLeft:10,
-        color:"#05375a",
     },
     panel:{
         padding: 20,
