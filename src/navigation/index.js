@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import ExploreScreen from '../screens/ExploreScreen';
 import OrderHistoryScreen from "../screens/OrderHistoryScreen"
 import SettingsScreen from '../screens/SettingsScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 export default function Navigation() {
   return (
@@ -22,6 +23,7 @@ const Stack = createNativeStackNavigator();
 function RootNavigator() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="Explore" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="OrderHistory" component={BottomTabNavigator} options={{ headerShown: false }} />
