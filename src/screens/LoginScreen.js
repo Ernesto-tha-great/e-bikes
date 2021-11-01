@@ -13,8 +13,8 @@ const LoginScreen = ({navigation}) => {
     const handleGoogleSignIn = () => {
         setGoogleSubmitting(true)
         const config = {
-            iosClientId:` YOUR IOS CLIENT ID`, 
-            androidClientId:`YOUR ANDROID CLIENT ID`,
+            iosClientId:` 248733133912-96v79fofr3bvbboldojtrbin25197fms.apps.googleusercontent.com`, 
+            androidClientId:`248733133912-i2kbsfbniuudj1o9e9io0v6u91uf3lo9.apps.googleusercontent.com`,
             scopes: ['profile', 'email']
         }
 
