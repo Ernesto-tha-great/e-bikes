@@ -1,4 +1,4 @@
-import { FontAwesome, Entypo, AntDesign, MaterialIcons,  Foundation} from '@expo/vector-icons';
+import { FontAwesome, MaterialIcons, Foundation} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -35,23 +35,23 @@ function RootNavigator() {
 const BottomTab = createBottomTabNavigator();
 
 function BottomTabNavigator() {
-  
 
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: "red",
-       
-      
-        
+        tabBarActiveTintColor: "gold", 
+        tabBarStyle:{
+          backgroundColor: "white",
+        }
       }}>
+
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
         options={({ navigation }) => ({
           title: 'Home',
-          tabBarIcon: () => <Foundation style={{ marginBottom: -3 }} name="home" color="grey" size={30} />,
+          tabBarIcon: () => <Foundation style={{ marginBottom: -3,  }} name="home" color="#FF6347" size={30} />,
           headerShown: false,
           
         })}
@@ -61,7 +61,7 @@ function BottomTabNavigator() {
         component={ExploreScreen}
         options={{
           title: 'Explore',
-          tabBarIcon: () => <MaterialIcons style={{ marginBottom: -3 }} name="receipt" size={30}  color="grey" />,
+          tabBarIcon: () => <MaterialIcons style={{ marginBottom: -3 }} name="receipt" size={30} color="#FF6347"   />,
           headerShown: false,
         }}
       />
@@ -71,7 +71,7 @@ function BottomTabNavigator() {
         component={OrderHistoryScreen}
         options={{
           title: 'Rides',
-          tabBarIcon: () => <FontAwesome name="paper-plane" size={26} color="grey" />,
+          tabBarIcon: () => <FontAwesome name="paper-plane" size={26} color="#FF6347" />,
           headerShown: false,
         }}
       />
@@ -81,7 +81,7 @@ function BottomTabNavigator() {
         component={SettingsScreen}
         options={{
           title: 'Settings',
-          tabBarIcon: () => <MaterialIcons style={{ marginBottom: -3 }} name="settings" size={30} color="grey" />,
+          tabBarIcon: () => <MaterialIcons style={{ marginBottom: -3 }} name="settings" size={30} color="#FF6347" />,
           headerShown: false,
         }}
       />

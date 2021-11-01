@@ -1,6 +1,6 @@
 import React from "react";
 import tw from "tailwind-react-native-classnames";
-import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, Dimensions } from "react-native";
+import { View, Image, StyleSheet, Dimensions } from "react-native";
 
 
 export const SLIDER_WIDTH = Dimensions.get('window').width 
@@ -11,7 +11,7 @@ const ImageCard = ({item, index}) => {
     <View style={[tw`bg-gray-200`,styles.container]} key={index}>
       <Image
         source={{ uri: item.image }}
-        style={[tw`bg-gray-100`, styles.image]}
+        style={[tw`bg-gray-200`, styles.image]}
       />
      
       
@@ -23,7 +23,7 @@ export default ImageCard;
 
 const styles = StyleSheet.create({
     container: {
-      borderRadius: 10,
+      borderRadius: 20,
       width: ITEM_WIDTH,
       paddingBottom: 4,
       shadowColor: "#000",
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     image: {
       width: ITEM_WIDTH,
       height: 250,
-      borderRadius: 10,
+      borderRadius: 20,
     },
   
   })
